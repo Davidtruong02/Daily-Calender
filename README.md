@@ -1,6 +1,9 @@
 # Daily-Calender
 The Daily Calender of a Software Engineer.
 
+## Description
+This challenge was to help us students gauge our understanding of multiple JavaScript libaries I.E(BootStrap, JQuery) and to use the starter code that was given to us and add the correct code to the JavaScript file based on our given knowledge from class.
+
 
 ## User Story
 
@@ -27,3 +30,8 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 ```
+
+
+## Mock Up
+The following animation demonstrates the application functionality:
+
