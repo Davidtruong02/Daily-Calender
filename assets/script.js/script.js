@@ -30,26 +30,6 @@ $('.saveBtn').click(function(){
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
   //
-function updateColorCoding() {
-  var currentHour = dayjs().hour();
-
-  $('.time-block').each(function(){
-    var timeBlock = $(this);
-    var timeBlockHour = parseInt(timeBlock.attr('id').split('-')[1]);
-
-    timeBlock.removeClass('past present future');
-  
-    if (timeBlockHour < currentHour) {
-      timeBlock.addClass('past');
-    } else if (timeBlockHour === currentHour) {
-      timeBlock.addClass('present');
-  
-    } else {
-      timeBlock.addClass('future');
-    }
-  
-  });
-}
 
 
 
@@ -60,18 +40,7 @@ function updateColorCoding() {
   // attribute of each time-block be used to do this?
   //
 
-function loadSavedEvents() {
-  $('.time-block').each(function(){
-    var timeBlock = $(this);
-    var timeBlockId = timeBlock.attr('id');
-    var savedDescription = localStorage.getItem(timeBlockId);
-    var textarea = timeBlock.find('.description');
 
-    if (savedDescription !== null) {
-      textarea.val(savedDescription);
-    }
-  });
-}
 
 
 
