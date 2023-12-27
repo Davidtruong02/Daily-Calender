@@ -1,5 +1,5 @@
 # Daily-Calender
-The Day
+The Daily Calender of a Software Engineer.
 
 
 ## User Story
