@@ -34,5 +34,5 @@ THEN the saved events persist
 
 ## Mock Up
 The following animation demonstrates the application functionality:
-./assets/demogif/05-third-party-apis-homework-demo.gif
+
 
