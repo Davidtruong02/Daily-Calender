@@ -1,13 +1,14 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(document).ready(function () {
+$(document).ready(function() {
   
   updateColorCoding();
 
   setInterval(updateColorCoding, 60000);
 
   loadSavedEvents();
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -21,8 +22,11 @@ $('.saveBtn').click(function(){
   var timeBlockId = timeBlock.attr('id');
   var description = timeBlock.find('.description').val();
   localStorage.setItem(timeBlockId, description);
-  showSaveMessage('Appointment saved to local stoarge')
+
+  showSaveMessage('Appointment saved to local storage')
 });
+
+
 
 
   // TODO: Add code to apply the past, present, or future class to each time
@@ -33,11 +37,14 @@ $('.saveBtn').click(function(){
   //
 function updateColorCoding() {
   var currentHour = dayjs().hour();
+
   $('.time-block').each(function(){
     var timeBlock = $(this);
     var timeBlockHour = parseInt(timeBlock.attr('id').split('-')[1]);
+
     timeBlock.removeClass('past present future');
-    if (timeBlock < currentHour) {
+
+    if (timeBlockHour < currentHour) {
       timeBlock.addClass('past');
     } else if (timeBlockHour === currentHour) {
       timeBlock.addClass('present');
@@ -55,7 +62,34 @@ function updateColorCoding() {
   // attribute of each time-block be used to do this?
   //
 
-
+  function loadSavedEvents() {
+    $('.time-block').each(function(){
+      var timeBlock = $(this);
+      var timeBlockId = timeBlock.attr('id');
+      var savedDescription = localStorage.getItem(timeBlockId);
+      var textarea = timeBlock.find('.description');
+      
+      if (savedDescription !== null) {
+        textarea.val(savedDescription);
+      }
+    });
+  }
+  // shows message after save button is clicked on teach time
+  function showSaveMessage(message) {
+    var messageDiv = $('<div>').addClass('save-message').text(message);
+  
+  
+    // appends the message to the body
+    $('body').append(messageDiv);
+  
+  
+    // sets a timer for the message to pop up then fade away once the message is saved
+    setTimeout(function(){
+      messageDiv.fadeOut(500, function(){
+        $(this).remove();
+      });
+    }, 2000);
+  }
 
 
 
