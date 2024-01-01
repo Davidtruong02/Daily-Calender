@@ -21,6 +21,7 @@ $('.saveBtn').click(function(){
   var timeBlockId = timeBlock.attr('id');
   var description = timeBlock.find('.description').val();
   localStorage.setItem(timeBlockId, description);
+  showSaveMessage('Appointment saved to local stoarge')
 });
 
 
