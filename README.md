@@ -37,6 +37,7 @@ The following animation demonstrates the application functionality:
 ![A user clicks on slots on the color-coded calendar and edits the events.](./assets/demogif/05-third-party-apis-homework-demo.gif)
 
 ## Deployment Link
+https://davidtruong02.github.io/Daily-Calender/
 
 ## License
 
