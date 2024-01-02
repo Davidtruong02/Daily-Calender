@@ -94,5 +94,4 @@ function updateColorCoding() {
   // TODO: Add code to display the current date in the header of the page.
   var currentDate = dayjs().format('MMMM D, YYYY');
   $('#currentDay').text(currentDate);
-
 });
